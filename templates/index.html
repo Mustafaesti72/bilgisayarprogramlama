@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    DevMaids
+{% endblock title %}
+
+{% block content %}
+
+		{% if not user.is_authenticated %}
+		    <h1 class="heading" style="text-align: center;">DevMaids'e Hoşgeldiniz!</h1><br><hr class="hr"><br>
+		    <h5>Mesaj Oluşturmak için Giriş Yapınız</h5><br>
+	     	| <a href="http://127.0.0.1:8000/accounts/login/" style="color:black;opacity:1;class="link">Giriş Yapın!</a> |
+	    	
+
+		
+		    <br><br>
+
+
+		{% else %}
+		    <h1 class="heading" style="text-align: center">Merhaba, {{ user }}!</h1><br><hr class="hr"><br><br>
+		    <h2 class="normal">Şu anda DevMaids'e giriş yaptınız!</h2><br><hr><br>
+		    <h4 class="normal">Hangi Grupta soru sormak istersiniz?</h4><br>
+
+		  | <a href="{% url 'genel:all' %}"style="color:black;opacity:1;" class="link">Genel</a> |
+		  <a href="{% url 'chat:all' %}"style="color:black;opacity:1;" class="link">Yapay Zeka</a> |
+		  <a href="{% url 'machine:all' %}"style="color:black;opacity:1;" class="link">Machine Learning</a> |
+		  <a href="{% url 'front:all' %}"style="color:black;opacity:1;" class="link">Front-End</a> |
+		  <a href="{% url 'backend:all' %}"style="color:black;opacity:1;" class="link">Back-End</a> |
+
+			
+			<a style="color: red;" href="{% url 'accounts:logout' %}"style="color:black;opacity:1; class="link">Çıkış Yap</a> |
+		    
+
+	
+
+		    	<br><br>
+		    </div>
+		{% endif %}
+
+{% endblock content %}
