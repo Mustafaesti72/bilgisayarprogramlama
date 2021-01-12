@@ -6,7 +6,6 @@ from django.urls import reverse
 
 # Create your models here.
 User = get_user_model()
-
 class Chat(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()

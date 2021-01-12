@@ -69,7 +69,7 @@ li{
  	font-family: 'Ubuntu', cursive;
 }
 .chat-user-special{
-  color: yellow;
+  color: blue;
   font-size: 12px;
 }
 .chat-date{
@@ -170,25 +170,26 @@ li{
 		<!-- Nav -->
 		<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
 			<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px"> X    Close Menu</a>
-
+			<link rel="shortcut icon" type="image/svg" href="{% static 'favicon.svg' %}">
+			<img style="margin-left: 70px;" src="https://static.thenounproject.com/png/581062-200.png" alt="Girl in a jacket" width="120" height="120">
 		  {% if user.is_authenticated %}
 		  <div class="w3-container">
-			<h3 class="w3-padding-64"><b>DevMaids</b></h3>
+			<h2 style="font-family: 'Redressed', cursive; color:black;" class="w3-padding-64"><b>DevMaids</b></h2>
 		  </div>
 		  <div class="w3-bar-block">
 			<a href="{% url 'home' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ana Sayfa</a> 
 			<a href="{% url 'genel:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" >Genel</a>
 
 			<a href="{% url 'chat:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Yapay Zeka</a> 
-			<a href="{% url 'machine:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Machine Learning</a> 
+			<a href="{% url 'machine:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Mobil Programlama</a> 
 			<a href="{% url 'front:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Front-End</a> 
 			<a href="{% url 'backend:all' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Back-End</a>
-			<a style="color: black;" href="{% url 'accounts:logout' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Çıkış Yap</a> 
+			<a style="color: black;" href="{% url 'accounts:logout' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-sign-out" aria-hidden="true"> </i> Çıkış Yap</a> 
 			 
 		</div>
 		  {% else %}
 		  <div class="w3-container">
-			<h3 class="w3-padding-64"><b>DevMaids</b></h3>
+			<h2  style="font-family: 'Redressed', cursive; color:black;"class="w3-padding-64"><b>DevMaids</b></h2>
 		  </div>
 		  <div class="w3-bar-block">
 			<a href="{% url 'home' %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AnaSayfa</a> 
@@ -200,7 +201,7 @@ li{
 		</nav>
 		<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
 			<a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-			<span>Company Name</span>
+			<span>DevMaids</span>
 		  </header>
 		  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 		<!-- Content -->
